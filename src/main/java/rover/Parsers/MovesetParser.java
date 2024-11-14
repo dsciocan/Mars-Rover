@@ -5,7 +5,7 @@ import rover.Instruction;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class movesetParser {
+public class MovesetParser{
 
     public static boolean checkInput(String s) {
         return Arrays.stream(Instruction.values()).map(Enum::name).toList().contains(s.toUpperCase());
