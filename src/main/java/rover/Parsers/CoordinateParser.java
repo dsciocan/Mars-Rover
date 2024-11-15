@@ -9,7 +9,7 @@ public class CoordinateParser {
         return s.matches("^\\d+(\\s+\\d+)$");
     }
 
-    public static Plateau generateCoordinates(String coordString) {
+    public static Plateau generatePlateau(String coordString) {
         if(checkInput(coordString)) {
             int x = Integer.parseInt(coordString.substring(0, coordString.indexOf(" ")));
             int y = Integer.parseInt(coordString.substring(coordString.indexOf(" ") + 1));

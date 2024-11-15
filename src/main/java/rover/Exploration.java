@@ -1,12 +1,13 @@
 package rover;
 
+import com.sun.net.httpserver.Authenticator;
 import rover.Parsers.MovesetParser;
 
 import java.util.ArrayList;
 
 public class Exploration {
-    private Rover rover;
-    private Plateau plateau;
+    private final Rover rover;
+    private final Plateau plateau;
     private final ArrayList<Instruction> moveset;
 
     public Exploration(Rover rover, Plateau plateau, String movesetString) {
@@ -37,12 +38,17 @@ public class Exploration {
                 case Instruction.L -> rover.faceLeft();
                 case Instruction.R -> rover.faceRight();
                 case Instruction.M -> {
+                    System.out.println("The rover is attempting to move...");
                     Position potentialMove = rover.visualiseMove();
                     if(canMove(potentialMove.x, potentialMove.y)) {
                         rover.move();
+                        System.out.println("Successfully moved.");
+                    } else {
+                        System.out.println("Move is out of permitted area, this instruction will be skipped.");
                     }
                 }
             }
+            System.out.println("Current rover position is: (" + rover.getCurrentPosition().x + " " + rover.getCurrentPosition().y + " " + rover.getCurrentPosition().facing.name() + ")");
         };
     }
 }

@@ -50,7 +50,6 @@ public class Rover {
     }
 
     public void move() {
-        System.out.println("The rover is attempting to move.");
         currentPosition.x += currentPosition.facing.getMoveX();
         currentPosition.y += currentPosition.facing.getMoveY();
     }
