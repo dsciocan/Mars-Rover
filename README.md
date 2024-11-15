@@ -15,7 +15,11 @@ To run this program, please fork and clone this repo to your local device.
 
 
 ## Usage:
-Inside the Main class, there is already a functional example of how this program is initialised, so feel free to modify coordinates and/or make your own rovers.
+**UI**
+The program comes with a default user interface. All you need to do is run the Main method whenever you want to start the program. 
+
+**Code**
+Alternatively, commented inside the Main class, there is a functional example of how this program is initialised, so feel free uncomment that, modify coordinates and/or make your own rovers.
 Running the main method will start the program.
 * Please note that coordinates must be passed in as strings as follows:
 - "x y" for the Plateau;
