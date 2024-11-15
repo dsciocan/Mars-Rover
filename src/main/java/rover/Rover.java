@@ -8,12 +8,12 @@ import java.util.ArrayList;
 public class Rover {
     private final Position initialPosition;
     private Position currentPosition;
-    private final ArrayList<Instruction> moveset;
 
-    public Rover(String initialPositionString, String movesetString) {
+
+    public Rover(String initialPositionString) {
         initialPosition = PositionParser.generateStartingPosition(initialPositionString);
         currentPosition = initialPosition;
-        moveset = MovesetParser.generateMoveset(movesetString);
+
     }
 
     public Position getInitialPosition() {
@@ -24,12 +24,9 @@ public class Rover {
         return currentPosition;
     }
 
-    public ArrayList<Instruction> getMoveset() {
-        return moveset;
-    }
-
 
     public void faceLeft() {
+        System.out.println("The rover is turning left");
         switch (currentPosition.facing){
             case Cardinal.N -> currentPosition.facing = Cardinal.W;
             case Cardinal.E -> currentPosition.facing = Cardinal.N;
@@ -40,6 +37,7 @@ public class Rover {
     }
 
     public void faceRight() {
+        System.out.println("The rover is turning left");
         switch (currentPosition.facing){
             case Cardinal.N -> currentPosition.facing = Cardinal.E;
             case Cardinal.E -> currentPosition.facing = Cardinal.S;
@@ -47,5 +45,10 @@ public class Rover {
             case Cardinal.W -> currentPosition.facing = Cardinal.N;
 
         }
+    }
+
+    public void move() {
+        currentPosition.x += currentPosition.facing.getMoveX();
+        currentPosition.y += currentPosition.facing.getMoveY();
     }
 }
