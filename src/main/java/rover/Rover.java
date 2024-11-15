@@ -24,6 +24,9 @@ public class Rover {
         return currentPosition;
     }
 
+    public void setCurrentPosition(Position newPosition) {
+        currentPosition = newPosition;
+    }
 
     public void faceLeft() {
         System.out.println("The rover is turning left");
@@ -50,5 +53,9 @@ public class Rover {
         System.out.println("The rover is attempting to move.");
         currentPosition.x += currentPosition.facing.getMoveX();
         currentPosition.y += currentPosition.facing.getMoveY();
+    }
+
+    public Position visualiseMove() {
+        return new Position(currentPosition.x + currentPosition.facing.getMoveX(), currentPosition.y + currentPosition.facing.getMoveY(), currentPosition.facing);
     }
 }
