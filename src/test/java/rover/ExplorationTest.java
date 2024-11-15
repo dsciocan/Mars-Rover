@@ -11,6 +11,7 @@ public class ExplorationTest {
         Rover testRover= new Rover(new Position(3, 5, Cardinal.N));
         Plateau testPlateau = new Plateau(7, 7);
         Exploration testExploration = new Exploration(testRover, testPlateau, "");
+        testExploration.executeMoveset();
         assertEquals(new Position(3, 5, Cardinal.N), testRover.getCurrentPosition());
     }
 
@@ -19,6 +20,7 @@ public class ExplorationTest {
         Rover testRover= new Rover(new Position(3, 5, Cardinal.N));
         Plateau testPlateau = new Plateau(7, 7);
         Exploration testExploration = new Exploration(testRover, testPlateau, "ghCVNNA");
+        testExploration.executeMoveset();
         assertEquals(new Position(3, 5, Cardinal.N), testRover.getCurrentPosition());
     }
 
@@ -27,6 +29,7 @@ public class ExplorationTest {
         Rover testRover= new Rover(new Position(3, 5, Cardinal.N));
         Plateau testPlateau = new Plateau(7, 7);
         Exploration testExploration = new Exploration(testRover, testPlateau, "LLRL");
+        testExploration.executeMoveset();
         assertEquals(new Position(3, 5, Cardinal.S), testRover.getCurrentPosition());
     }
 
@@ -35,6 +38,7 @@ public class ExplorationTest {
         Rover testRover= new Rover(new Position(3, 5, Cardinal.N));
         Plateau testPlateau = new Plateau(7, 7);
         Exploration testExploration = new Exploration(testRover, testPlateau, "RRJFMlmfa");
+        testExploration.executeMoveset();
         assertEquals(new Position(4, 4, Cardinal.E), testRover.getCurrentPosition());
     }
 
@@ -43,6 +47,7 @@ public class ExplorationTest {
         Rover testRover= new Rover(new Position(3, 5, Cardinal.N));
         Plateau testPlateau = new Plateau(7, 7);
         Exploration testExploration = new Exploration(testRover, testPlateau, "LLMML");
+        testExploration.executeMoveset();
         assertEquals(new Position(3, 3, Cardinal.E), testRover.getCurrentPosition());
     }
 
@@ -51,6 +56,7 @@ public class ExplorationTest {
         Rover testRover= new Rover(new Position(3, 5, Cardinal.N));
         Plateau testPlateau = new Plateau(7, 7);
         Exploration testExploration = new Exploration(testRover, testPlateau, "RMRMLMRM");
+        testExploration.executeMoveset();
         assertEquals(new Position(5, 3, Cardinal.S), testRover.getCurrentPosition());
     }
 
@@ -59,6 +65,7 @@ public class ExplorationTest {
         Rover testRover= new Rover(new Position(6, 7, Cardinal.N));
         Plateau testPlateau = new Plateau(7, 7);
         Exploration testExploration = new Exploration(testRover, testPlateau, "MRMLMRM");
+        testExploration.executeMoveset();
         assertEquals(new Position(7, 7, Cardinal.E), testRover.getCurrentPosition());
     }
 
@@ -67,7 +74,8 @@ public class ExplorationTest {
         Rover testRover= new Rover(new Position(0, 4, Cardinal.W));
         Plateau testPlateau = new Plateau(7, 7);
         Exploration testExploration = new Exploration(testRover, testPlateau, "MRMLMRM");
-        assertEquals(new Position(0, 4, Cardinal.N), testRover.getCurrentPosition());
+        testExploration.executeMoveset();
+        assertEquals(new Position(0, 6, Cardinal.N), testRover.getCurrentPosition());
     }
 
 
