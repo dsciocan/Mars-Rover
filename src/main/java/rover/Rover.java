@@ -10,8 +10,8 @@ public class Rover {
     private Position currentPosition;
 
 
-    public Rover(String initialPositionString) {
-        initialPosition = PositionParser.generateStartingPosition(initialPositionString);
+    public Rover(Position initialPosition) {
+        this.initialPosition = initialPosition;
         currentPosition = initialPosition;
 
     }
@@ -32,12 +32,11 @@ public class Rover {
             case Cardinal.E -> currentPosition.facing = Cardinal.N;
             case Cardinal.S -> currentPosition.facing = Cardinal.E;
             case Cardinal.W -> currentPosition.facing = Cardinal.S;
-
         }
     }
 
     public void faceRight() {
-        System.out.println("The rover is turning left");
+        System.out.println("The rover is turning right");
         switch (currentPosition.facing){
             case Cardinal.N -> currentPosition.facing = Cardinal.E;
             case Cardinal.E -> currentPosition.facing = Cardinal.S;
@@ -48,6 +47,7 @@ public class Rover {
     }
 
     public void move() {
+        System.out.println("The rover is attempting to move.");
         currentPosition.x += currentPosition.facing.getMoveX();
         currentPosition.y += currentPosition.facing.getMoveY();
     }
