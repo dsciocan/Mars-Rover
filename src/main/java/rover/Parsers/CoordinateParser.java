@@ -15,8 +15,7 @@ public class CoordinateParser {
             int y = Integer.parseInt(coordString.substring(coordString.indexOf(" ") + 1));
             return new Plateau(x, y);
         } else {
-            System.out.println("Invalid input format, remember to write your coordinates as 'x y'");
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Invalid input format, remember to write your coordinates as 'x y'");
         }
     }
 }

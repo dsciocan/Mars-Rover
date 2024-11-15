@@ -3,17 +3,22 @@ package rover;
 import com.sun.net.httpserver.Authenticator;
 import rover.Parsers.MovesetParser;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 public class Exploration {
     private final Rover rover;
     private final Plateau plateau;
     private final ArrayList<Instruction> moveset;
 
-    public Exploration(Rover rover, Plateau plateau, String movesetString) {
+    public Exploration(Rover rover, Plateau plateau, ArrayList<Instruction> moveset) {
+        if(rover.getInitialPosition().x > plateau.sizeX() || rover.getInitialPosition().y > plateau.sizeY() || rover.getInitialPosition().x < 0 || rover.getInitialPosition().y < 0) {
+            throw new InputMismatchException("Rover landed outside of plateau! Abort mission('q') or send a new rover('c')!");
+        }
         this.rover = rover;
         this.plateau = plateau;
-        moveset = MovesetParser.generateMoveset(movesetString);
+        this.moveset = moveset;
     }
 
     public Rover getRover() {

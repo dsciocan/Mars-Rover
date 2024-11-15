@@ -20,8 +20,7 @@ public class PositionParser {
             Cardinal point = Cardinal.valueOf(positionString.substring(positionString.indexOf(" ", spaceIndex + 1) + 1).toUpperCase());
             return new Position(x, y, point);
         } else {
-            System.out.println("Invalid input format, remember to write your coordinates as 'x y N/E/S/W'");
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Invalid input format, remember to write your coordinates as 'x y N/E/S/W'");
         }
     }
 }
