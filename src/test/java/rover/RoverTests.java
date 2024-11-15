@@ -1,9 +1,10 @@
 package rover;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
-public class RoverTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class RoverTests {
 
     //Face Left
     @Test
